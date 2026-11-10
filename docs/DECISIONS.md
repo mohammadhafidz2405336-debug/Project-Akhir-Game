@@ -37,3 +37,10 @@ Catatan keputusan yang menyimpang dari atau belum dijawab GDD. Format: tanggal �
 9. **2026-11-10 — `build/web/` masuk `.gitignore`; bukti export disimpan sebagai log + tangkapan layar.**
    Alasan: 39 MB per commit tidak perlu; build dapat direproduksi dengan satu perintah di README.
    (GDD 5.1 meminta minimal aset sumber dan `.import` di-commit — keduanya di-commit.)
+
+## 11. Kamera menempel player (10 Nov 2026)
+
+Kamera memakai `position_smoothing` saja, **tanpa** `drag_*_margin`. Drag margin
+membuat kamera diam sampai player mendekati tepi layar, dan pemain membacanya
+sebagai "ada jeda" saat berjalan ke satu arah. Level 1-3 masih muat dalam satu
+layar per room, jadi dead-zone tidak diperlukan.

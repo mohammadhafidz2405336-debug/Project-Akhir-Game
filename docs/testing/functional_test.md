@@ -67,3 +67,12 @@ dimuat -> terasa seperti tombol MULAI BARU tidak bekerja.
 Bukti: `scripts/_dev/menu_probe.gd` (`-- --menuprobe`), screenshot
 `docs/progress/week2/08_puzzle_ui.png` & `09_puzzle_solved.png`,
 `check_nodes.py` 0 error, autotest 19/19 pass.
+
+## Regresi E Kedua & Kamera (10 Nov 2026)
+
+| # | Laporan | Akar masalah | Perbaikan | Bukti |
+|---|---------|--------------|-----------|-------|
+| 1 | Tekan E kedua, soal tidak muncul | `interact()` mengosongkan `player.interacting`; `body_entered` tak terpicu lagi karena player tidak pernah keluar area terminal | `interact()` tidak lagi menghapus `interacting`; tambah `_input()`: E/Esc menutup puzzle (`PROCESS_MODE_ALWAYS`) | probe: E 1/2/3 semuanya `ui_terbuka=true slot=3`, Esc -> `ui=false paused=false` |
+| 2 | Ke kanan terasa ada jeda, bukan langsung | `Camera2D` `drag_horizontal_enabled` + margin 8%: kamera diam dulu sampai player menyentuh tepi, lalu menyusul | drag dimatikan, `position_smoothing_speed` 12 -> 14 (kamera menempel player terus) | probe: dx stabil 1.83 px/frame (110 px/s @60fps), 0 frame berhenti |
+
+Catatan: `dx` awal 0.0 -> 1.83 hanya karena akselerasi 900 px/s^2 (0.12 s), bukan bug.

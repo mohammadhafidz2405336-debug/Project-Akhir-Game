@@ -40,12 +40,19 @@ func _ready() -> void:
 func interact(player: Node) -> void:
 	if _open_ui != null:
 		return
-	player.interacting = null
 	$Label.visible = false
 	_open(player)
 
+func _input(event: InputEvent) -> void:
+	if _open_ui == null:
+		return
+	if event.is_action_pressed("interact") or event.is_action_pressed("ui_cancel"):
+		_close()
+		get_viewport().set_input_as_handled()
+
 func _open(player: Node) -> void:
 	get_tree().paused = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	var layer := CanvasLayer.new()
 	layer.process_mode = Node.PROCESS_MODE_ALWAYS
 	add_child(layer)
@@ -367,4 +374,5 @@ func _close() -> void:
 	if _open_ui != null:
 		_open_ui.queue_free()
 		_open_ui = null
+	process_mode = Node.PROCESS_MODE_INHERIT
 	get_tree().paused = false

@@ -28,6 +28,14 @@ func _ready() -> void:
 		var s: Node = load("res://scripts/_dev/shots.gd").new()
 		s.name = "Shots"
 		get_tree().root.add_child.call_deferred(s)
+	elif "--moveprobe" in args and not get_tree().root.has_node("MoveProbe"):
+		var mp: Node = load("res://scripts/_dev/move_probe.gd").new()
+		mp.name = "MoveProbe"
+		get_tree().root.add_child.call_deferred(mp)
+	elif "--termprobe" in args and not get_tree().root.has_node("TermProbe"):
+		var tp: Node = load("res://scripts/_dev/term_probe.gd").new()
+		tp.name = "TermProbe"
+		get_tree().root.add_child.call_deferred(tp)
 	elif "--menuprobe" in args and not get_tree().root.has_node("MenuProbe"):
 		var p: Node = load("res://scripts/_dev/menu_probe.gd").new()
 		p.name = "MenuProbe"

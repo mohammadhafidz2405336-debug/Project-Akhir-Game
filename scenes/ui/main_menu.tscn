@@ -1,21 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://c31mainmenudscn00"]
+[gd_scene format=3 uid="uid://cvli2kdbjlxal"]
 
-[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_s"]
+[ext_resource type="Script" uid="uid://cpgyy4ntjt51n" path="res://scripts/ui/main_menu.gd" id="1_s"]
 [ext_resource type="Theme" path="res://assets/fonts/theme_pixel.tres" id="2_theme"]
 
-[node name="MainMenu" type="Control"]
-script = ExtResource("1_s")
+[node name="MainMenu" type="Control" unique_id=414086363]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource("2_theme")
+script = ExtResource("1_s")
 
-[node name="Bg" type="ColorRect" parent="."]
+[node name="Bg" type="ColorRect" parent="." unique_id=1705532941]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0.05, 0.07, 0.12, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="." unique_id=1267822598]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -420.0
@@ -26,7 +29,8 @@ theme_override_font_sizes/font_size = 20
 text = "RELATIONAL DATA CHRONICLES"
 horizontal_alignment = 1
 
-[node name="Sub" type="Label" parent="."]
+[node name="Sub" type="Label" parent="." unique_id=919087019]
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -420.0
@@ -37,7 +41,8 @@ theme_override_font_sizes/font_size = 10
 text = "THE LOST SCHEMA // Kelompok 9 // Basis Data"
 horizontal_alignment = 1
 
-[node name="Box" type="VBoxContainer" parent="."]
+[node name="Box" type="VBoxContainer" parent="." unique_id=713829492]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -48,22 +53,28 @@ offset_right = 120.0
 offset_bottom = 130.0
 theme_override_constants/separation = 10
 
-[node name="Play" type="Button" parent="Box"]
+[node name="Play" type="Button" parent="Box" unique_id=287947551]
+layout_mode = 2
 text = "MULAI BARU"
 
-[node name="Continue" type="Button" parent="Box"]
+[node name="Continue" type="Button" parent="Box" unique_id=61284729]
+layout_mode = 2
 text = "LANJUTKAN"
 
-[node name="LevelSelect" type="Button" parent="Box"]
+[node name="LevelSelect" type="Button" parent="Box" unique_id=178745802]
+layout_mode = 2
 text = "PILIH LEVEL"
 
-[node name="About" type="Button" parent="Box"]
+[node name="About" type="Button" parent="Box" unique_id=89511938]
+layout_mode = 2
 text = "TENTANG"
 
-[node name="Quit" type="Button" parent="Box"]
+[node name="Quit" type="Button" parent="Box" unique_id=1963351775]
+layout_mode = 2
 text = "KELUAR"
 
-[node name="Foot" type="Label" parent="."]
+[node name="Foot" type="Label" parent="." unique_id=139867106]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 20.0
@@ -71,5 +82,5 @@ offset_top = -34.0
 offset_right = 940.0
 offset_bottom = -10.0
 theme_override_font_sizes/font_size = 8
-text = "Aset: lihat About & ASSETS.md // Godot 4.7.2 MIT"
+text = "Realtional data"
 horizontal_alignment = 1
