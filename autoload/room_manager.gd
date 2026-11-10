@@ -11,6 +11,8 @@ var current_level := ""
 var current_room := ""
 var last_checkpoint := Vector2.ZERO
 var level_scene: Node = null
+## true bila level dimuat lewat tombol LANJUTKAN (posisi dari save dipakai)
+var resume_from_save := false
 
 func load_level(id: String) -> void:
 	if not LEVELS.has(id):
@@ -48,6 +50,7 @@ func set_checkpoint(level_id: String, pos: Vector2) -> void:
 	GameState.last_sync = {"level": level_id, "x": pos.x, "y": pos.y}
 
 func start_new_run() -> void:
+	resume_from_save = false
 	GameState.reset_run()
 	SaveManager.delete_save()
 	load_level("L1")

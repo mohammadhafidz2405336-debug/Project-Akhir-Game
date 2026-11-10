@@ -42,11 +42,9 @@ func _ready() -> void:
 func _stream(path: String) -> AudioStream:
 	if not _cache.has(path):
 		var s := load(path)
-		if s is AudioStreamWAV:
+		if path.begins_with("res://assets/audio/music/") and s is AudioStreamWAV:
 			var w: AudioStreamWAV = s
 			w.loop_mode = AudioStreamWAV.LOOP_FORWARD
-			w.loop_begin = 0
-			w.loop_end = int(w.get_length() * w.mix_rate)
 		_cache[path] = s
 	return _cache[path]
 

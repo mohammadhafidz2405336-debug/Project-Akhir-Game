@@ -33,6 +33,11 @@ func _ready() -> void:
 	var sp: Dictionary = data.get("spawn", {})
 	player.global_position = _tile_to_world(int(sp.get("x", 3)), int(sp.get("y", 15)))
 	RoomManager.set_checkpoint(level_id, player.global_position)
+	if RoomManager.resume_from_save and String(GameState.last_sync.get("level", "")) == level_id:
+		player.global_position = Vector2(float(GameState.last_sync.get("x", player.global_position.x)), float(GameState.last_sync.get("y", player.global_position.y)))
+		RoomManager.resume_from_save = false
+		RoomManager.set_checkpoint(level_id, player.global_position)
+	SaveManager.save_game()
 	AudioManager.play_music("level")
 	await get_tree().process_frame
 	if not room_bounds.is_empty():

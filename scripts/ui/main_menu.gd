@@ -17,6 +17,7 @@ func _ready() -> void:
 	about_btn.pressed.connect(_go.bind(func(): get_tree().change_scene_to_file("res://scenes/ui/about.tscn")))
 	quit_btn.pressed.connect(func(): get_tree().quit())
 	cont_btn.disabled = not SaveManager.has_save()
+	cont_btn.tooltip_text = "Tidak ada progres tersimpan" if cont_btn.disabled else "Lanjutkan dari checkpoint terakhir"
 	play_btn.grab_focus()
 	var args := OS.get_cmdline_user_args()
 	if "--autotest" in args:
@@ -27,6 +28,10 @@ func _ready() -> void:
 		var s: Node = load("res://scripts/_dev/shots.gd").new()
 		s.name = "Shots"
 		get_tree().root.add_child.call_deferred(s)
+	elif "--menuprobe" in args and not get_tree().root.has_node("MenuProbe"):
+		var p: Node = load("res://scripts/_dev/menu_probe.gd").new()
+		p.name = "MenuProbe"
+		get_tree().root.add_child.call_deferred(p)
 
 func _go(f: Callable) -> void:
 	AudioManager.play_sfx("ui_click")
@@ -40,4 +45,5 @@ func _on_continue() -> void:
 	AudioManager.play_sfx("ui_click")
 	if not SaveManager.load_game():
 		return
+	RoomManager.resume_from_save = true
 	RoomManager.load_level(String(GameState.last_sync.get("level", "L1")))

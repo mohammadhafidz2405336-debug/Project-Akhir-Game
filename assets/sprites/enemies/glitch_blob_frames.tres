@@ -1,6 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://6uhv2dh5yila"]
 
-[ext_resource type="Texture2D" path="res://assets/sprites/enemies/glitch_blob.png" id="1_tex"]
+[ext_resource type="Texture2D" uid="uid://b0aahyv7aweof" path="res://assets/sprites/enemies/glitch_blob.png" id="1_tex"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_idle_0"]
 atlas = ExtResource("1_tex")
@@ -12,8 +12,14 @@ region = Rect2(16, 0, 16, 16)
 
 [resource]
 animations = [{
-"frames": [{"duration": 1.0, "texture": SubResource("AtlasTexture_idle_0")}, {"duration": 1.0, "texture": SubResource("AtlasTexture_idle_1")}],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idle_1")
+}],
+"loop": 1,
 "name": &"idle",
 "speed": 6.0
 }]
