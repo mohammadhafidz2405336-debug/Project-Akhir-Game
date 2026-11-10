@@ -1,0 +1,18 @@
+{
+  "id": "L2_P01",
+  "type": "pk_barrier",
+  "difficulty": "easy",
+  "table": "Mahasiswa",
+  "columns": ["NIM", "Nama", "Kota"],
+  "rows": [
+    {"NIM": "2201001", "Nama": "Sari", "Kota": "Malang"},
+    {"NIM": "2201002", "Nama": "Budi", "Kota": "Malang"},
+    {"NIM": "2201003", "Nama": "Budi", "Kota": "Batu"}
+  ],
+  "valid_keys": [["NIM"]],
+  "explanations": {
+    "Nama": "Duplicate key value: 'Budi' muncul lebih dari sekali, sehingga Nama tidak dapat mengidentifikasi baris secara unik.",
+    "Kota": "Duplicate key value: 'Malang' muncul lebih dari sekali, sehingga Kota bukan candidate key.",
+    "NIM": "Benar: NIM unik dan tidak NULL, sehingga dapat menjadi primary key."
+  }
+}

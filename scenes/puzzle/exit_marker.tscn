@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c09exitmarkerdscn"]
+
+[ext_resource type="Script" path="res://scripts/world/exit_marker.gd" id="1_s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/key_icon.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="r_exit"]
+size = Vector2(24, 32)
+
+[node name="ExitMarker" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("r_exit")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -30.0
+offset_top = -40.0
+offset_right = 34.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 7
+text = "EXIT"

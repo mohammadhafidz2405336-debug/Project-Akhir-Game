@@ -1,0 +1,26 @@
+{
+  "id": "L3_P01",
+  "type": "fk_fix",
+  "difficulty": "medium",
+  "table": "MataKuliah",
+  "columns": ["KodeMK", "NamaMK", "id_dosen"],
+  "rows": [
+    {"KodeMK": "MK01", "NamaMK": "Basis Data", "id_dosen": 2},
+    {"KodeMK": "MK02", "NamaMK": "Algoritma", "id_dosen": 1},
+    {"KodeMK": "MK03", "NamaMK": "Jaringan", "id_dosen": 7}
+  ],
+  "target_row": "MK03",
+  "parent_table": "Dosen",
+  "parent_rows": [
+    {"id_dosen": 1, "nama": "Dr. Ratna"},
+    {"id_dosen": 2, "nama": "Dr. Samsul"},
+    {"id_dosen": 3, "nama": "Dr. Wulan"}
+  ],
+  "allow_null": true,
+  "valid_values": [1, 2, 3, null],
+  "explanations": {
+    "valid": "Benar: nilai FK sekarang menunjuk baris induk yang ada (referential integrity terpenuhi).",
+    "null": "Benar: kolom id_dosen mengizinkan NULL, artinya relasi belum ditetapkan - bukan relasi ke baris yang tidak ada.",
+    "invalid": "Foreign key constraint fails: parent row not found. Nilai 7 tidak ada di Dosen."
+  }
+}

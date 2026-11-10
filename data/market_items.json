@@ -1,0 +1,16 @@
+{
+  "items": [
+    {"id": "health_t1", "nama": "Health Upgrade T1", "effect": "health_max", "value": 1, "tier": 1, "max_tier": 3, "cost": 100, "cost_mc": 0, "min_level": 2},
+    {"id": "health_t2", "nama": "Health Upgrade T2", "effect": "health_max", "value": 1, "tier": 2, "max_tier": 3, "cost": 200, "cost_mc": 1, "min_level": 4},
+    {"id": "health_t3", "nama": "Health Upgrade T3", "effect": "health_max", "value": 1, "tier": 3, "max_tier": 3, "cost": 350, "cost_mc": 2, "min_level": 6},
+    {"id": "energy_t1", "nama": "Energy Upgrade T1", "effect": "energy_max", "value": 20, "tier": 1, "max_tier": 3, "cost": 80, "cost_mc": 0, "min_level": 2},
+    {"id": "energy_t2", "nama": "Energy Upgrade T2", "effect": "energy_max", "value": 20, "tier": 2, "max_tier": 3, "cost": 160, "cost_mc": 1, "min_level": 4},
+    {"id": "energy_t3", "nama": "Energy Upgrade T3", "effect": "energy_max", "value": 20, "tier": 3, "max_tier": 3, "cost": 280, "cost_mc": 2, "min_level": 6},
+    {"id": "damage_t1", "nama": "Damage Upgrade T1", "effect": "damage", "value": 1, "tier": 1, "max_tier": 3, "cost": 120, "cost_mc": 0, "min_level": 3},
+    {"id": "damage_t2", "nama": "Damage Upgrade T2", "effect": "damage", "value": 1, "tier": 2, "max_tier": 3, "cost": 240, "cost_mc": 1, "min_level": 5},
+    {"id": "damage_t3", "nama": "Damage Upgrade T3", "effect": "damage", "value": 1, "tier": 3, "max_tier": 3, "cost": 400, "cost_mc": 2, "min_level": 7},
+    {"id": "logic_recovery", "nama": "Logic Recovery", "effect": "energy", "value": 50, "tier": 1, "cost": 40, "carry_max": 5},
+    {"id": "integrity_patch", "nama": "Integrity Patch", "effect": "heal", "value": 2, "tier": 1, "cost": 60, "carry_max": 3},
+    {"id": "puzzle_hint", "nama": "Puzzle Hint", "effect": "hint", "value": 1, "tier": 1, "cost": 30, "carry_max": 5}
+  ]
+}

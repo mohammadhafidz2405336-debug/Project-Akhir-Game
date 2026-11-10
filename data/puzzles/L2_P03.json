@@ -1,0 +1,20 @@
+{
+  "id": "L2_P03",
+  "type": "pk_barrier",
+  "difficulty": "hard",
+  "table": "Nilai",
+  "columns": ["NIM", "KodeMK"],
+  "composite": true,
+  "rows": [
+    {"NIM": "2201001", "KodeMK": "MK01"},
+    {"NIM": "2201001", "KodeMK": "MK02"},
+    {"NIM": "2201002", "KodeMK": "MK01"},
+    {"NIM": "2201002", "KodeMK": "MK02"}
+  ],
+  "valid_keys": [["NIM", "KodeMK"]],
+  "explanations": {
+    "NIM": "NIM saja tidak unik: 2201001 muncul dua kali.",
+    "KodeMK": "KodeMK saja tidak unik: MK01 muncul dua kali.",
+    "NIM+KodeMK": "Benar: kombinasi NIM + KodeMK unik, jadi composite key."
+  }
+}

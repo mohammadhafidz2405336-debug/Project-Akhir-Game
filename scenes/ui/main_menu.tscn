@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://c31mainmenudscn00"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_s"]
+[ext_resource type="Theme" path="res://assets/fonts/theme_pixel.tres" id="2_theme"]
+
+[node name="MainMenu" type="Control"]
+script = ExtResource("1_s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_theme")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.07, 0.12, 1)
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -420.0
+offset_top = 70.0
+offset_right = 420.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 20
+text = "RELATIONAL DATA CHRONICLES"
+horizontal_alignment = 1
+
+[node name="Sub" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -420.0
+offset_top = 115.0
+offset_right = 420.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 10
+text = "THE LOST SCHEMA // Kelompok 9 // Basis Data"
+horizontal_alignment = 1
+
+[node name="Box" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -90.0
+offset_right = 120.0
+offset_bottom = 130.0
+theme_override_constants/separation = 10
+
+[node name="Play" type="Button" parent="Box"]
+text = "MULAI BARU"
+
+[node name="Continue" type="Button" parent="Box"]
+text = "LANJUTKAN"
+
+[node name="LevelSelect" type="Button" parent="Box"]
+text = "PILIH LEVEL"
+
+[node name="About" type="Button" parent="Box"]
+text = "TENTANG"
+
+[node name="Quit" type="Button" parent="Box"]
+text = "KELUAR"
+
+[node name="Foot" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -34.0
+offset_right = 940.0
+offset_bottom = -10.0
+theme_override_font_sizes/font_size = 8
+text = "Aset: lihat About & ASSETS.md // Godot 4.7.2 MIT"
+horizontal_alignment = 1

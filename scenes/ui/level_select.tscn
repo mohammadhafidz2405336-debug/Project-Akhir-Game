@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://c32levelselectdscn"]
+
+[ext_resource type="Script" path="res://scripts/ui/level_select.gd" id="1_s"]
+[ext_resource type="Theme" path="res://assets/fonts/theme_pixel.tres" id="2_theme"]
+
+[node name="LevelSelect" type="Control"]
+script = ExtResource("1_s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_theme")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.05, 0.07, 0.12, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 30.0
+offset_right = 920.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 14
+text = "PILIH REGION"
+horizontal_alignment = 1
+
+[node name="Box" type="VBoxContainer" parent="."]
+offset_left = 200.0
+offset_top = 120.0
+offset_right = 760.0
+offset_bottom = 380.0
+theme_override_constants/separation = 14
+
+[node name="L1" type="Button" parent="Box"]
+text = "L1 RECORD RUINS"
+
+[node name="L2" type="Button" parent="Box"]
+text = "L2 KEY CITADEL"
+
+[node name="L3" type="Button" parent="Box"]
+text = "L3 FOREIGN SPIRE"
+
+[node name="Market" type="Button" parent="Box"]
+text = "DATA MARKET"
+
+[node name="Back" type="Button" parent="Box"]
+text = "KEMBALI"
+
+[node name="Status" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 470.0
+offset_right = 920.0
+offset_bottom = 520.0
+theme_override_font_sizes/font_size = 8
+text = "Fragments 0 // Logic Lv 1 // Solved 0/9"
+horizontal_alignment = 1

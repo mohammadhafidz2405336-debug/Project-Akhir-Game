@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c33endsessiondscn"]
+
+[ext_resource type="Script" path="res://scripts/ui/end_session.gd" id="1_s"]
+[ext_resource type="Theme" path="res://assets/fonts/theme_pixel.tres" id="2_theme"]
+
+[node name="EndSession" type="Control"]
+script = ExtResource("1_s")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("2_theme")
+
+[node name="Bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.04, 0.05, 0.09, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 90.0
+offset_right = 920.0
+offset_bottom = 140.0
+theme_override_font_sizes/font_size = 20
+text = "SESSION END"
+horizontal_alignment = 1
+
+[node name="Stats" type="Label" parent="."]
+offset_left = 60.0
+offset_top = 170.0
+offset_right = 900.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 9
+text = "-"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Box" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_top = 380.0
+offset_right = 220.0
+offset_bottom = 420.0
+theme_override_constants/separation = 16
+
+[node name="Retry" type="Button" parent="Box"]
+text = "COBA LAGI"
+
+[node name="Menu" type="Button" parent="Box"]
+text = "MENU UTAMA"

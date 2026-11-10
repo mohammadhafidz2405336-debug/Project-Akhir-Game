@@ -1,0 +1,19 @@
+{
+  "id": "L2_P02",
+  "type": "pk_barrier",
+  "difficulty": "medium",
+  "table": "Pegawai",
+  "columns": ["KodePegawai", "NIK", "Email"],
+  "rows": [
+    {"KodePegawai": "P01", "NIK": "35070101", "Email": "a@x.id"},
+    {"KodePegawai": "P02", "NIK": "35070102", "Email": "b@x.id"},
+    {"KodePegawai": "P03", "NIK": null, "Email": "a@x.id"},
+    {"KodePegawai": "P04", "NIK": "35070104", "Email": "c@x.id"}
+  ],
+  "valid_keys": [["KodePegawai"]],
+  "explanations": {
+    "NIK": "Unik, tetapi ada nilai NULL. Primary key tidak boleh NULL (entity integrity).",
+    "Email": "Duplicate key value: 'a@x.id' muncul dua kali.",
+    "KodePegawai": "Benar: unik untuk semua baris dan tidak ada NULL."
+  }
+}

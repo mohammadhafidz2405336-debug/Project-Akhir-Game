@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://c35marketuidscn0"]
+
+[ext_resource type="Script" path="res://scripts/ui/market_ui.gd" id="1_s"]
+[ext_resource type="Theme" path="res://assets/fonts/theme_pixel.tres" id="2_theme"]
+
+[node name="MarketUI" type="CanvasLayer"]
+script = ExtResource("1_s")
+process_mode = 3
+layer = 25
+
+[node name="Panel" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.03, 0.04, 0.07, 0.94)
+
+[node name="Title" type="Label" parent="Panel"]
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 920.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 12
+text = "DATA MARKET // Broker Byte"
+horizontal_alignment = 1
+
+[node name="List" type="VBoxContainer" parent="Panel"]
+offset_left = 90.0
+offset_top = 62.0
+offset_right = 870.0
+offset_bottom = 430.0
+theme_override_constants/separation = 6
+
+[node name="Feedback" type="Label" parent="Panel"]
+offset_left = 90.0
+offset_top = 436.0
+offset_right = 870.0
+offset_bottom = 462.0
+theme_override_font_sizes/font_size = 8
+text = ""
+horizontal_alignment = 1
+
+[node name="Close" type="Button" parent="Panel"]
+offset_left = 400.0
+offset_top = 470.0
+offset_right = 560.0
+offset_bottom = 506.0
+text = "TUTUP (Esc)"

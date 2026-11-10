@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c02anchor9dscn0"]
+
+[ext_resource type="Script" path="res://scripts/puzzle/anchor.gd" id="1_s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/anchor_pk.png" id="2_pk"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/anchor_fk.png" id="3_fk"]
+
+[sub_resource type="RectangleShape2D" id="r_anchor"]
+size = Vector2(16, 20)
+
+[node name="Anchor" type="Area2D" groups=["relation_anchor"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("r_anchor")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -26.0
+offset_top = -32.0
+offset_right = 26.0
+offset_bottom = -16.0
+theme_override_font_sizes/font_size = 7
+text = "id_dosen = 1"
+horizontal_alignment = 1

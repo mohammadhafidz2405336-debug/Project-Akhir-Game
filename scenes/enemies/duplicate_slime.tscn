@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2sl1me2dup1icate"]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_base.gd" id="1_script"]
+[ext_resource type="SpriteFrames" path="res://assets/sprites/enemies/duplicate_slime_frames.tres" id="2_frames"]
+
+[sub_resource type="RectangleShape2D" id="Rect_body"]
+size = Vector2(12, 12)
+
+[sub_resource type="CircleShape2D" id="Circle_hurt"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="Circle_hit"]
+radius = 8.0
+
+[sub_resource type="StyleBoxFlat" id="Style_hp"]
+bg_color = Color(0.9, 0.6, 0.2, 1)
+
+[sub_resource type="RectangleShape2D" id="Rect_ray"]
+size = Vector2(2, 2)
+
+[node name="DuplicateSlime" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_script")
+kind = "duplicate_slime"
+behavior = "hop"
+split_on_death = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+offset = Vector2(0, -8)
+sprite_frames = ExtResource("2_frames")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("Rect_body")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -8)
+shape = SubResource("Circle_hurt")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -8)
+shape = SubResource("Circle_hit")
+
+[node name="WallRay" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+target_position = Vector2(14, 0)
+
+[node name="LedgeRay" type="RayCast2D" parent="."]
+position = Vector2(0, -2)
+target_position = Vector2(0, 16)
+
+[node name="HpBar" type="ProgressBar" parent="."]
+offset_left = -12.0
+offset_top = -26.0
+offset_right = 12.0
+offset_bottom = -20.0
+max_value = 4.0
+value = 4.0
+show_percentage = false
+theme_override_styles/background = SubResource("Style_hp")

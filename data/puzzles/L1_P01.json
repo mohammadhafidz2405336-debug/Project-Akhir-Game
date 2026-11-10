@@ -1,0 +1,27 @@
+{
+  "id": "L1_P01",
+  "type": "column_match",
+  "difficulty": "medium",
+  "judul": "Terminal Tabel Mahasiswa",
+  "instruksi": "Seret setiap nilai ke kolom yang domainnya sesuai.",
+  "table": "Mahasiswa",
+  "columns": ["NIM", "Nama", "Prodi"],
+  "rows": [
+    {"NIM": "2201001", "Nama": "Sari", "Prodi": "Informatika"},
+    {"NIM": "2201002", "Nama": "Budi", "Prodi": "Sistem Informasi"},
+    {"NIM": "2201003", "Nama": "Rina", "Prodi": "Informatika"}
+  ],
+  "cards": [
+    {"value": "2201001", "column": "NIM"},
+    {"value": "2201003", "column": "NIM"},
+    {"value": "Sari", "column": "Nama"},
+    {"value": "Budi", "column": "Nama"},
+    {"value": "Informatika", "column": "Prodi"},
+    {"value": "Sistem Informasi", "column": "Prodi"}
+  ],
+  "explanations": {
+    "NIM": "Benar: NIM berisi angka identitas mahasiswa.",
+    "Nama": "Benar: Nama berisi nama orang.",
+    "Prodi": "Benar: Prodi berisi nama program studi."
+  }
+}

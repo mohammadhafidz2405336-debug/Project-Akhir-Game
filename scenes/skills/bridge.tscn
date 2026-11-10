@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10bridgedscn00"]
+
+[ext_resource type="Script" path="res://scripts/skills/bridge.gd" id="1_s"]
+[ext_resource type="Texture2D" path="res://assets/sprites/ui/anchor_fk.png" id="2_tex"]
+
+[sub_resource type="RectangleShape2D" id="r_bridge"]
+size = Vector2(96, 8)
+
+[node name="Bridge" type="StaticBody2D" groups=["bridge"]]
+collision_layer = 1
+collision_mask = 0
+script = ExtResource("1_s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("r_bridge")
+position = Vector2(48, 0)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 96, 0)
+width = 5.0
+default_color = Color(0.45, 0.95, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tex")
+modulate = Color(1, 1, 1, 0.25)
+position = Vector2(48, -18)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true

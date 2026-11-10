@@ -1,0 +1,26 @@
+{
+  "records": [
+    {"id": "L1_AR_01", "judul": "Relation, Tuple, dan Attribute",
+     "isi": "Relation adalah tabel: kumpulan baris yang setiap barisnya punya susunan kolom yang sama. Satu baris disebut tuple atau record. Satu kolom disebut attribute, dan setiap attribute punya domain yaitu himpunan nilai yang sah untuk kolom itu."},
+    {"id": "L1_AR_02", "judul": "Schema vs Instance",
+     "isi": "Relation schema adalah rancangannya: nama tabel dan daftar attribute beserta domainnya, misalnya Mahasiswa(NIM, Nama, Prodi). Relation instance adalah isi tabel pada saat tertentu: baris-baris yang sedang tersimpan. Schema relatif tetap, instance berubah setiap kali data ditambah atau dihapus."},
+    {"id": "L1_AR_03", "judul": "Domain",
+     "isi": "Domain adalah kumpulan nilai yang boleh dipakai sebuah attribute. Nilai 'Sari' sah untuk attribute Nama (domain: teks nama), tetapi tidak sah untuk NIM yang domainnya angka identitas. Memasukkan nilai di luar domain disebut pelanggaran domain."},
+    {"id": "L2_AR_01", "judul": "Primary Key",
+     "isi": "Primary key adalah satu atau beberapa attribute yang nilainya unik untuk setiap baris dan tidak boleh NULL. Karena itu NIM dapat menjadi primary key, sedangkan Nama belum tentu: bisa ada dua mahasiswa bernama Budi."},
+    {"id": "L2_AR_02", "judul": "Entity Integrity",
+     "isi": "Aturan entity integrity menyatakan primary key tidak boleh bernilai NULL. Jika primary key NULL, baris itu tidak dapat diidentifikasi, sehingga ia tidak lagi berfungsi sebagai identitas entitas di dalam relation."},
+    {"id": "L2_AR_03", "judul": "Superkey dan Candidate Key",
+     "isi": "Superkey adalah himpunan attribute yang nilainya unik untuk setiap baris, boleh berisi attribute berlebih. Candidate key adalah superkey minimal: tidak ada attribute yang bisa dibuang tanpa kehilangan sifat uniknya. Dari candidate key, satu dipilih menjadi primary key."},
+    {"id": "L2_AR_04", "judul": "Composite Key",
+     "isi": "Composite key adalah primary key yang terdiri atas dua attribute atau lebih. Pada tabel Nilai(NIM, KodeMK, Nilai), NIM saja tidak unik dan KodeMK saja tidak unik, tetapi pasangan NIM + KodeMK unik untuk setiap baris."},
+    {"id": "L3_AR_01", "judul": "Foreign Key",
+     "isi": "Foreign key adalah attribute di sebuah tabel yang nilainya mengacu ke primary key tabel lain. Pada MataKuliah(id_dosen) nilai 2 mengacu ke Dosen(id_dosen) = 2, sehingga hubungan dosen-pengampu mata kuliah terjaga."},
+    {"id": "L3_AR_02", "judul": "Referential Integrity",
+     "isi": "Referential integrity mengharuskan setiap nilai foreign key yang tidak NULL benar-benar ada sebagai primary key di tabel induknya. Jika tidak ada, muncul orphan record: baris anak yang kehilangan induknya dan tidak dapat dipertanggungjawabkan relasinya."},
+    {"id": "L3_AR_03", "judul": "Foreign Key Boleh NULL",
+     "isi": "Foreign key boleh bernilai NULL jika kolomnya mengizinkan, misalnya mata kuliah yang belum punya dosen pengampu. NULL di sini berarti 'belum ada relasi', bukan 'relasi ke baris yang tidak ada'."},
+    {"id": "L3_AR_04", "judul": "Orphan Record",
+     "isi": "Orphan record adalah baris yang nilai foreign key-nya menunjuk ke induk yang tidak ada, misalnya MK03 dengan id_dosen = 7 padahal Dosen hanya berisi 1, 2, dan 3. Basis data yang sehat menolak penulisan seperti ini lewat foreign key constraint."}
+  ]
+}
